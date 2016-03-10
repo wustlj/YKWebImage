@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5E41C6D1C86E549005A539D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C6C1C86E549005A539D /* main.m */; };
+		B5E41C701C86E549005A539D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C6F1C86E549005A539D /* AppDelegate.m */; };
+		B5E41C731C86E549005A539D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C721C86E549005A539D /* ViewController.m */; };
+		B5E41C761C86E549005A539D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E41C741C86E549005A539D /* Main.storyboard */; };
+		B5E41C781C86E549005A539D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5E41C771C86E549005A539D /* Assets.xcassets */; };
+		B5E41C7B1C86E549005A539D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5E41C791C86E549005A539D /* LaunchScreen.storyboard */; };
+		B5E41C861C86E549005A539D /* YKWebImage_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C851C86E549005A539D /* YKWebImage_DemoTests.m */; };
+		B5E41C911C86E549005A539D /* YKWebImage_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C901C86E549005A539D /* YKWebImage_DemoUITests.m */; };
+		B5E41CA71C86EB33005A539D /* 2015sdj_002.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E41CA21C86EB33005A539D /* 2015sdj_002.png */; settings = {ASSET_TAGS = (); }; };
+		B5E41CA81C86EB33005A539D /* lifebuoy.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E41CA31C86EB33005A539D /* lifebuoy.png */; settings = {ASSET_TAGS = (); }; };
+		B5E41CA91C86EB33005A539D /* lollipop.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E41CA41C86EB33005A539D /* lollipop.png */; settings = {ASSET_TAGS = (); }; };
+		B5E41CAA1C86EB33005A539D /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E41CA51C86EB33005A539D /* stats.png */; settings = {ASSET_TAGS = (); }; };
+		B5E41CAB1C86EB33005A539D /* zen-icons-pen.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E41CA61C86EB33005A539D /* zen-icons-pen.png */; settings = {ASSET_TAGS = (); }; };
+		B5E629211C87DF4B00D91626 /* YKWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E41D741C871188005A539D /* YKWebImage.framework */; };
+		B5E629221C87DF5A00D91626 /* YKWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E41D741C871188005A539D /* YKWebImage.framework */; };
+		B5E629231C87DF5A00D91626 /* YKWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5E41D741C871188005A539D /* YKWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5E41C821C86E549005A539D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E41C601C86E549005A539D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5E41C671C86E549005A539D;
+			remoteInfo = "YKWebImage Demo";
+		};
+		B5E41C8D1C86E549005A539D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E41C601C86E549005A539D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5E41C671C86E549005A539D;
+			remoteInfo = "YKWebImage Demo";
+		};
+		B5E41D731C871188005A539D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5E41C321C86E16A005A539D;
+			remoteInfo = YKWebImage;
+		};
+		B5E41D751C871188005A539D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5E41C3C1C86E16A005A539D;
+			remoteInfo = YKWebImageTests;
+		};
+		B5E629241C87DF5A00D91626 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B5E41C311C86E16A005A539D;
+			remoteInfo = YKWebImage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B5E629261C87DF5A00D91626 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5E629231C87DF5A00D91626 /* YKWebImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B5E41C681C86E549005A539D /* YKWebImage Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YKWebImage Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E41C6C1C86E549005A539D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B5E41C6E1C86E549005A539D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B5E41C6F1C86E549005A539D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B5E41C711C86E549005A539D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B5E41C721C86E549005A539D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B5E41C751C86E549005A539D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5E41C771C86E549005A539D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5E41C7A1C86E549005A539D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5E41C7C1C86E549005A539D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E41C811C86E549005A539D /* YKWebImage DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YKWebImage DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E41C851C86E549005A539D /* YKWebImage_DemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKWebImage_DemoTests.m; sourceTree = "<group>"; };
+		B5E41C871C86E549005A539D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E41C8C1C86E549005A539D /* YKWebImage DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YKWebImage DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5E41C901C86E549005A539D /* YKWebImage_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKWebImage_DemoUITests.m; sourceTree = "<group>"; };
+		B5E41C921C86E549005A539D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E41CA21C86EB33005A539D /* 2015sdj_002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2015sdj_002.png; sourceTree = "<group>"; };
+		B5E41CA31C86EB33005A539D /* lifebuoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifebuoy.png; sourceTree = "<group>"; };
+		B5E41CA41C86EB33005A539D /* lollipop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lollipop.png; sourceTree = "<group>"; };
+		B5E41CA51C86EB33005A539D /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
+		B5E41CA61C86EB33005A539D /* zen-icons-pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zen-icons-pen.png"; sourceTree = "<group>"; };
+		B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YKWebImage.xcodeproj; path = YKWebImage/YKWebImage.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5E41C651C86E549005A539D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E629211C87DF4B00D91626 /* YKWebImage.framework in Frameworks */,
+				B5E629221C87DF5A00D91626 /* YKWebImage.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C7E1C86E549005A539D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C891C86E549005A539D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5E41C5F1C86E549005A539D = {
+			isa = PBXGroup;
+			children = (
+				B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */,
+				B5E41C6A1C86E549005A539D /* YKWebImage Demo */,
+				B5E41C841C86E549005A539D /* YKWebImage DemoTests */,
+				B5E41C8F1C86E549005A539D /* YKWebImage DemoUITests */,
+				B5E41C691C86E549005A539D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5E41C691C86E549005A539D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41C681C86E549005A539D /* YKWebImage Demo.app */,
+				B5E41C811C86E549005A539D /* YKWebImage DemoTests.xctest */,
+				B5E41C8C1C86E549005A539D /* YKWebImage DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5E41C6A1C86E549005A539D /* YKWebImage Demo */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41CA21C86EB33005A539D /* 2015sdj_002.png */,
+				B5E41CA31C86EB33005A539D /* lifebuoy.png */,
+				B5E41CA41C86EB33005A539D /* lollipop.png */,
+				B5E41CA51C86EB33005A539D /* stats.png */,
+				B5E41CA61C86EB33005A539D /* zen-icons-pen.png */,
+				B5E41C6E1C86E549005A539D /* AppDelegate.h */,
+				B5E41C6F1C86E549005A539D /* AppDelegate.m */,
+				B5E41C711C86E549005A539D /* ViewController.h */,
+				B5E41C721C86E549005A539D /* ViewController.m */,
+				B5E41C741C86E549005A539D /* Main.storyboard */,
+				B5E41C771C86E549005A539D /* Assets.xcassets */,
+				B5E41C791C86E549005A539D /* LaunchScreen.storyboard */,
+				B5E41C7C1C86E549005A539D /* Info.plist */,
+				B5E41C6B1C86E549005A539D /* Supporting Files */,
+			);
+			path = "YKWebImage Demo";
+			sourceTree = "<group>";
+		};
+		B5E41C6B1C86E549005A539D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41C6C1C86E549005A539D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5E41C841C86E549005A539D /* YKWebImage DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41C851C86E549005A539D /* YKWebImage_DemoTests.m */,
+				B5E41C871C86E549005A539D /* Info.plist */,
+			);
+			path = "YKWebImage DemoTests";
+			sourceTree = "<group>";
+		};
+		B5E41C8F1C86E549005A539D /* YKWebImage DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41C901C86E549005A539D /* YKWebImage_DemoUITests.m */,
+				B5E41C921C86E549005A539D /* Info.plist */,
+			);
+			path = "YKWebImage DemoUITests";
+			sourceTree = "<group>";
+		};
+		B5E41D6F1C871188005A539D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5E41D741C871188005A539D /* YKWebImage.framework */,
+				B5E41D761C871188005A539D /* YKWebImageTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5E41C671C86E549005A539D /* YKWebImage Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5E41C951C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage Demo" */;
+			buildPhases = (
+				B5E41C641C86E549005A539D /* Sources */,
+				B5E41C651C86E549005A539D /* Frameworks */,
+				B5E41C661C86E549005A539D /* Resources */,
+				B5E629261C87DF5A00D91626 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5E629251C87DF5A00D91626 /* PBXTargetDependency */,
+			);
+			name = "YKWebImage Demo";
+			productName = "YKWebImage Demo";
+			productReference = B5E41C681C86E549005A539D /* YKWebImage Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5E41C801C86E549005A539D /* YKWebImage DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5E41C981C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage DemoTests" */;
+			buildPhases = (
+				B5E41C7D1C86E549005A539D /* Sources */,
+				B5E41C7E1C86E549005A539D /* Frameworks */,
+				B5E41C7F1C86E549005A539D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5E41C831C86E549005A539D /* PBXTargetDependency */,
+			);
+			name = "YKWebImage DemoTests";
+			productName = "YKWebImage DemoTests";
+			productReference = B5E41C811C86E549005A539D /* YKWebImage DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5E41C8B1C86E549005A539D /* YKWebImage DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5E41C9B1C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage DemoUITests" */;
+			buildPhases = (
+				B5E41C881C86E549005A539D /* Sources */,
+				B5E41C891C86E549005A539D /* Frameworks */,
+				B5E41C8A1C86E549005A539D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5E41C8E1C86E549005A539D /* PBXTargetDependency */,
+			);
+			name = "YKWebImage DemoUITests";
+			productName = "YKWebImage DemoUITests";
+			productReference = B5E41C8C1C86E549005A539D /* YKWebImage DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5E41C601C86E549005A539D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = youku;
+				TargetAttributes = {
+					B5E41C671C86E549005A539D = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B5E41C801C86E549005A539D = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B5E41C671C86E549005A539D;
+					};
+					B5E41C8B1C86E549005A539D = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B5E41C671C86E549005A539D;
+					};
+				};
+			};
+			buildConfigurationList = B5E41C631C86E549005A539D /* Build configuration list for PBXProject "YKWebImage Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5E41C5F1C86E549005A539D;
+			productRefGroup = B5E41C691C86E549005A539D /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B5E41D6F1C871188005A539D /* Products */;
+					ProjectRef = B5E41D6E1C871188005A539D /* YKWebImage.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B5E41C671C86E549005A539D /* YKWebImage Demo */,
+				B5E41C801C86E549005A539D /* YKWebImage DemoTests */,
+				B5E41C8B1C86E549005A539D /* YKWebImage DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B5E41D741C871188005A539D /* YKWebImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = YKWebImage.framework;
+			remoteRef = B5E41D731C871188005A539D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B5E41D761C871188005A539D /* YKWebImageTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = YKWebImageTests.xctest;
+			remoteRef = B5E41D751C871188005A539D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5E41C661C86E549005A539D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E41CA71C86EB33005A539D /* 2015sdj_002.png in Resources */,
+				B5E41C7B1C86E549005A539D /* LaunchScreen.storyboard in Resources */,
+				B5E41CAB1C86EB33005A539D /* zen-icons-pen.png in Resources */,
+				B5E41C781C86E549005A539D /* Assets.xcassets in Resources */,
+				B5E41C761C86E549005A539D /* Main.storyboard in Resources */,
+				B5E41CAA1C86EB33005A539D /* stats.png in Resources */,
+				B5E41CA91C86EB33005A539D /* lollipop.png in Resources */,
+				B5E41CA81C86EB33005A539D /* lifebuoy.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C7F1C86E549005A539D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C8A1C86E549005A539D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5E41C641C86E549005A539D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E41C731C86E549005A539D /* ViewController.m in Sources */,
+				B5E41C701C86E549005A539D /* AppDelegate.m in Sources */,
+				B5E41C6D1C86E549005A539D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C7D1C86E549005A539D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E41C861C86E549005A539D /* YKWebImage_DemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5E41C881C86E549005A539D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E41C911C86E549005A539D /* YKWebImage_DemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5E41C831C86E549005A539D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5E41C671C86E549005A539D /* YKWebImage Demo */;
+			targetProxy = B5E41C821C86E549005A539D /* PBXContainerItemProxy */;
+		};
+		B5E41C8E1C86E549005A539D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5E41C671C86E549005A539D /* YKWebImage Demo */;
+			targetProxy = B5E41C8D1C86E549005A539D /* PBXContainerItemProxy */;
+		};
+		B5E629251C87DF5A00D91626 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = YKWebImage;
+			targetProxy = B5E629241C87DF5A00D91626 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5E41C741C86E549005A539D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5E41C751C86E549005A539D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5E41C791C86E549005A539D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5E41C7A1C86E549005A539D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5E41C931C86E549005A539D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5E41C941C86E549005A539D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5E41C961C86E549005A539D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/YKWebImage/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/YKWebImage/Build/Products/Debug-iphonesimulator",
+				);
+				INFOPLIST_FILE = "YKWebImage Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B5E41C971C86E549005A539D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/YKWebImage/Build/Products/Debug-iphoneos",
+					"$(PROJECT_DIR)/YKWebImage/Build/Products/Debug-iphonesimulator",
+				);
+				INFOPLIST_FILE = "YKWebImage Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B5E41C991C86E549005A539D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "YKWebImage DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKWebImage Demo.app/YKWebImage Demo";
+			};
+			name = Debug;
+		};
+		B5E41C9A1C86E549005A539D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "YKWebImage DemoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-DemoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YKWebImage Demo.app/YKWebImage Demo";
+			};
+			name = Release;
+		};
+		B5E41C9C1C86E549005A539D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "YKWebImage DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "YKWebImage Demo";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B5E41C9D1C86E549005A539D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "YKWebImage DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.youku.YKWebImage-DemoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "YKWebImage Demo";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5E41C631C86E549005A539D /* Build configuration list for PBXProject "YKWebImage Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5E41C931C86E549005A539D /* Debug */,
+				B5E41C941C86E549005A539D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5E41C951C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5E41C961C86E549005A539D /* Debug */,
+				B5E41C971C86E549005A539D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5E41C981C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5E41C991C86E549005A539D /* Debug */,
+				B5E41C9A1C86E549005A539D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5E41C9B1C86E549005A539D /* Build configuration list for PBXNativeTarget "YKWebImage DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5E41C9C1C86E549005A539D /* Debug */,
+				B5E41C9D1C86E549005A539D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5E41C601C86E549005A539D /* Project object */;
+}
