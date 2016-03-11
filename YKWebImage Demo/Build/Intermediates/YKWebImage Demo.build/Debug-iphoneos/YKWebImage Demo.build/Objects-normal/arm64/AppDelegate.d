@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/royli/ios/demo/YKWebImage\ Demo/YKWebImage\ Demo/AppDelegate.m \
-  /Users/royli/ios/demo/YKWebImage\ Demo/YKWebImage\ Demo/AppDelegate.h
+  /Users/royli/Desktop/YKWebImage/YKWebImage/YKWebImage\ Demo/YKWebImage\ Demo/AppDelegate.m \
+  /Users/royli/Desktop/YKWebImage/YKWebImage/YKWebImage\ Demo/YKWebImage\ Demo/AppDelegate.h

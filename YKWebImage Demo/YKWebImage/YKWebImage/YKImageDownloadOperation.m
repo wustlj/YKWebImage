@@ -14,6 +14,7 @@
 }
 @property (nonatomic, assign, getter=isExecuting) BOOL executing;
 @property (nonatomic, assign, getter=isFinished) BOOL finished;
+@property (nonatomic, assign, getter=isCancelled) BOOL cancelled;
 
 @property (nonatomic, copy) YKImageDownloadProgressBlock progressBlock;
 @property (nonatomic, copy) YKImageDownloadCompletedBlock completedBlock;
@@ -28,6 +29,7 @@
 
 @synthesize finished = _finished;
 @synthesize executing = _executing;
+@synthesize cancelled = _cancelled;
 
 - (id)initWithRequest:(NSURLRequest *)request progress:(YKImageDownloadProgressBlock)progressBlock completed:(YKImageDownloadCompletedBlock)completedBlock {
     self = [super init];
@@ -35,6 +37,7 @@
         _request = request;
         _progressBlock = [progressBlock copy];
         _completedBlock = [completedBlock copy];
+        self.name = [request.URL absoluteString];
     }
     return self;
 }
@@ -53,12 +56,17 @@
         self.executing = YES;
         self.urlConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
         self.thread = [NSThread currentThread];
+        NSLog(@"%@", self.thread);
     }
     
     [self.urlConnection start];
     
     CFRunLoopRun();
     
+    if ([self isCancelled]) {
+        [self finish];
+        return;
+    }
     if (!self.finished) {
         [self.urlConnection cancel];
     }
@@ -69,45 +77,65 @@
 }
 
 - (void)setFinished:(BOOL)finished {
-    @synchronized(self) {
-        [self willChangeValueForKey:@"isFinished"];
-        _finished = finished;
-        [self didChangeValueForKey:@"isFinished"];
-    }
+    [self willChangeValueForKey:@"isFinished"];
+    _finished = finished;
+    [self didChangeValueForKey:@"isFinished"];
 }
 
 - (void)setExecuting:(BOOL)executing {
-    @synchronized(self) {
-        [self willChangeValueForKey:@"isExecuting"];
-        _executing = executing;
-        [self didChangeValueForKey:@"isExecuting"];
-    }
+    [self willChangeValueForKey:@"isExecuting"];
+    _executing = executing;
+    [self didChangeValueForKey:@"isExecuting"];
+}
+
+- (void)setCancelled:(BOOL)cancelled {
+    [self willChangeValueForKey:@"isCancelled"];
+    _cancelled = cancelled;
+    [self didChangeValueForKey:@"isCancelled"];
 }
 
 - (void)cancel {
-    if (self.thread) {
-        [self performSelector:@selector(cancelAndStop) onThread:self.thread withObject:nil waitUntilDone:nil];
-    } else {
-        [self cancelAndStop];
+    @synchronized(self) {
+        if (self.thread) {
+            [self performSelector:@selector(cancelInternalAndStop) onThread:self.thread withObject:nil waitUntilDone:nil];
+        } else {
+            [self cancelInternal];
+        }
+    }
+}
+
+- (void)cancelInternalAndStop {
+    [self cancelInternal];
+    CFRunLoopStop(CFRunLoopGetCurrent());
+}
+
+- (void)cancelInternal {
+    if (self.isFinished) return;
+    
+    NSLog(@"cancel %@", self.request.URL);
+
+    [super cancel];
+    
+    if (self.isExecuting) {
+        [self.urlConnection cancel];
+        self.finished = YES;
+        self.executing = NO;
     }
 }
 
 - (void)cancelAndStop {
     @synchronized(self) {
-        if (self.finished) {
-            NSLog(@"cancel failed :%@", self.request.URL);
-            return;
+        if (!self.isFinished && !self.isCancelled) {
+            NSLog(@"cancel %@", self.request.URL);
+            [super cancel];
+            
+            [self.urlConnection cancel];
+            
+            if (self.isExecuting) self.executing = NO;
+            if (!self.isFinished) self.finished = YES;
+            
+            CFRunLoopStop(CFRunLoopGetCurrent());
         }
-        
-        NSLog(@"cancel %@", self.request.URL);
-        [super cancel];
-        
-        [self.urlConnection cancel];
-        
-        if (self.isExecuting) self.executing = NO;
-        if (!self.isFinished) self.finished = YES;
-        
-        CFRunLoopStop(CFRunLoopGetCurrent());
     }
 }
 
@@ -158,9 +186,24 @@
         self.completedBlock(image, nil, YES);
     }
     
-    self.finished = YES;
-    self.executing = NO;
+//    @synchronized(self) {
+//        self.finished = YES;
+//        self.executing = NO;
+//    }
+    [self finish]; 
 }
+
+- (void)finish {
+    [self willChangeValueForKey:@"isExecuting"];
+    [self willChangeValueForKey:@"isFinished"];
+    
+    _executing = NO;
+    _finished = YES;
+    
+    [self didChangeValueForKey:@"isExecuting"];
+    [self didChangeValueForKey:@"isFinished"];
+}
+
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"%@", error);

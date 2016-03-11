@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/royli/ios/demo/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownloadOperation.m \
-  /Users/royli/ios/demo/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownloadOperation.h \
-  /Users/royli/ios/demo/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownload.h
+  /Users/royli/Desktop/YKWebImage/YKWebImage/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownloadOperation.m \
+  /Users/royli/Desktop/YKWebImage/YKWebImage/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownloadOperation.h \
+  /Users/royli/Desktop/YKWebImage/YKWebImage/YKWebImage\ Demo/YKWebImage/YKWebImage/YKImageDownload.h
