@@ -1,6 +1,0 @@
-framework module YKWebImage {
-  umbrella header "YKWebImage.h"
-
-  export *
-  module * { export * }
-}

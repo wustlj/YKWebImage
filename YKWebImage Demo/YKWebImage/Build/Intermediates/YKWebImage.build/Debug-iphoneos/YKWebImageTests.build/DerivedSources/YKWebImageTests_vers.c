@@ -1,1 +1,0 @@
- const unsigned char YKWebImageTestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:YKWebImageTests  PROJECT:YKWebImage-1" "\n"; const double YKWebImageTestsVersionNumber __attribute__ ((used)) = (double)1.;
