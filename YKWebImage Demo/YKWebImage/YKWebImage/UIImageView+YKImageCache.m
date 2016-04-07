@@ -47,7 +47,6 @@ static char operationKey;
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder completionBlock:(void (^)(void))block {
     [self cancelImageDownload];
     
-    objc_setAssociatedObject(self, &imageURLKey, url, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     self.imageURL = url;
     
     self.image = placeholder;
@@ -64,9 +63,9 @@ static char operationKey;
                 sself.operation = nil;
                
                 if (image) {
-//                if (image && [[sself.imageURL absoluteString] isEqualToString:[url absoluteString]]) {
                     dispatch_async(dispatch_get_main_queue(), ^{
                         sself.image = image;
+                        [sself setNeedsLayout];
                     });
                     
                     if (isFinished) {
@@ -100,6 +99,10 @@ static char operationKey;
         
         self.operation = nil;
     }
+}
+
+- (void)setImageSmooth:(UIImage *)image {
+    [self performSelector:@selector(setImage:) withObject:image afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
 }
 
 @end

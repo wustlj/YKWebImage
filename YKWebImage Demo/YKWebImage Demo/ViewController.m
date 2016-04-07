@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <YKWebImage/YKWebImage.h>
+#import <YKWebImage/UIImage+Decode.h>
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 {
@@ -36,7 +37,7 @@
 
 - (void)setupData {
     _dataArray = [[NSMutableArray alloc] initWithCapacity:10];
-    
+
     [_dataArray addObject:@"http://d.lanrentuku.com/down/png/1601/20yuanxingyinyingtubiao/lollipop.png"];
     [_dataArray addObject:@"http://d.lanrentuku.com/down/png/1601/20yuanxingyinyingtubiao/lifebuoy.png"];
     [_dataArray addObject:@"http://d.lanrentuku.com/down/png/1601/20yuanxingyinyingtubiao/home.png"];
@@ -52,6 +53,12 @@
         [_dataArray addObject:[NSString stringWithFormat:@"https://s3.amazonaws.com/fast-image-cache/demo-images/FICDDemoImage%03d.jpg", i]];
     }
 
+/*
+    [_dataArray addObject:@"FICDDemoImage001.jpg"];
+    [_dataArray addObject:@"FICDDemoImage002.jpg"];
+    [_dataArray addObject:@"FICDDemoImage004.jpg"];
+*/
+    
 #pragma Test Cache
 /*
     [_dataArray addObject:@"lifebuoy.png"];
@@ -88,9 +95,28 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
     }
     
+    NSString *fileName = [_dataArray[indexPath.row] lastPathComponent];
+
     [cell.imageView setImageWithURL:[NSURL URLWithString:_dataArray[indexPath.row]] placeholderImage:[UIImage imageNamed:@"2015sdj_002.png"]];
+
+#pragma mark - Test Image decode
+/*
+    UIImage *originImage = [UIImage imageNamed:_dataArray[indexPath.row]];
+    UIImage *decodeImage = [UIImage decodeImageWithImage:originImage];
     
-    cell.textLabel.text = [_dataArray[indexPath.row] lastPathComponent];
+    NSData *oData = UIImageJPEGRepresentation(originImage, 0.5);
+    NSData *dData = UIImagePNGRepresentation(decodeImage);
+    
+    NSString *oPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.jpg", [fileName stringByDeletingPathExtension]]];
+    NSString *dPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png", [fileName stringByDeletingPathExtension]]];
+    [oData writeToFile:oPath atomically:YES];
+    [dData writeToFile:dPath atomically:YES];
+    
+    NSLog(@"%lu,%lu", (unsigned long)[oData length], (unsigned long)[dData length]);
+    
+    cell.imageView.image = decodeImage;
+*/
+    cell.textLabel.text = fileName;
     
     return cell;
 }

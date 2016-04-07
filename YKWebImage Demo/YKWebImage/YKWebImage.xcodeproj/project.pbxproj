@@ -18,6 +18,8 @@
 		B5E41C5C1C86E2F9005A539D /* YKImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C581C86E2F9005A539D /* YKImageDownload.m */; settings = {ASSET_TAGS = (); }; };
 		B5E41C5D1C86E2F9005A539D /* YKImageDownloadOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B5E41C591C86E2F9005A539D /* YKImageDownloadOperation.h */; settings = {ASSET_TAGS = (); }; };
 		B5E41C5E1C86E2F9005A539D /* YKImageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E41C5A1C86E2F9005A539D /* YKImageDownloadOperation.m */; settings = {ASSET_TAGS = (); }; };
+		B5F6DC6F1CB516BD00DF96AA /* UIImage+Decode.h in Headers */ = {isa = PBXBuildFile; fileRef = B5F6DC6D1CB516BD00DF96AA /* UIImage+Decode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B5F6DC701CB516BD00DF96AA /* UIImage+Decode.m in Sources */ = {isa = PBXBuildFile; fileRef = B5F6DC6E1CB516BD00DF96AA /* UIImage+Decode.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		B5E41C581C86E2F9005A539D /* YKImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKImageDownload.m; sourceTree = "<group>"; };
 		B5E41C591C86E2F9005A539D /* YKImageDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKImageDownloadOperation.h; sourceTree = "<group>"; };
 		B5E41C5A1C86E2F9005A539D /* YKImageDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKImageDownloadOperation.m; sourceTree = "<group>"; };
+		B5F6DC6D1CB516BD00DF96AA /* UIImage+Decode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Decode.h"; sourceTree = "<group>"; };
+		B5F6DC6E1CB516BD00DF96AA /* UIImage+Decode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Decode.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			children = (
 				B5E41C4F1C86E2E7005A539D /* UIImageView+YKImageCache.h */,
 				B5E41C501C86E2E7005A539D /* UIImageView+YKImageCache.m */,
+				B5F6DC6D1CB516BD00DF96AA /* UIImage+Decode.h */,
+				B5F6DC6E1CB516BD00DF96AA /* UIImage+Decode.m */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -142,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E41C551C86E2EF005A539D /* YKImageCache.h in Headers */,
+				B5F6DC6F1CB516BD00DF96AA /* UIImage+Decode.h in Headers */,
 				B5E41C511C86E2E7005A539D /* UIImageView+YKImageCache.h in Headers */,
 				B5E41C5D1C86E2F9005A539D /* YKImageDownloadOperation.h in Headers */,
 				B5E41C5B1C86E2F9005A539D /* YKImageDownload.h in Headers */,
@@ -249,6 +256,7 @@
 				B5E41C5E1C86E2F9005A539D /* YKImageDownloadOperation.m in Sources */,
 				B5E41C5C1C86E2F9005A539D /* YKImageDownload.m in Sources */,
 				B5E41C521C86E2E7005A539D /* UIImageView+YKImageCache.m in Sources */,
+				B5F6DC701CB516BD00DF96AA /* UIImage+Decode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +440,7 @@
 				B5E41C481C86E16A005A539D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5E41C491C86E16A005A539D /* Build configuration list for PBXNativeTarget "YKWebImageTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +449,7 @@
 				B5E41C4B1C86E16A005A539D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

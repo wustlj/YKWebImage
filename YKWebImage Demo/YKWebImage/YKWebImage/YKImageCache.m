@@ -8,6 +8,7 @@
 
 #import "YKImageCache.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "UIImage+Decode.h"
 
 @interface YKImageCache ()
 {
@@ -16,6 +17,7 @@
 }
 @property (nonatomic, strong) NSCache *memCache;
 @property (nonatomic, strong) dispatch_queue_t ioQueue;
+@property (nonatomic, assign) BOOL shouldDecompressImage;
 
 @end
 
@@ -34,10 +36,12 @@
     self = [super init];
     if (self) {
         _shouldCacheInMemory = YES;
+        _shouldDecompressImage = YES;
         _memCache = [[NSCache alloc] init];
         _ioQueue = dispatch_queue_create("com.youku.ykimage.cache", DISPATCH_QUEUE_SERIAL);
         [self setupDirectoryPath];
         _fileManager = [[NSFileManager alloc] init];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cleanMemoryCache) name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
     }
     return self;
 }
@@ -48,8 +52,6 @@
 }
 
 - (NSString *)fileNameForKey:(NSString *)key {
-    return [key lastPathComponent];
-    
     const char *cStr = [key UTF8String];
     if (cStr == NULL) {
         cStr = "";
@@ -108,6 +110,7 @@
 - (UIImage *)imageFromCacheForKey:(NSString *)key {
     UIImage *image = [self.memCache objectForKey:key];
     if (image) {
+        NSLog(@"memory");
         return image;
     }
     
@@ -115,7 +118,16 @@
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     
     if (data) {
+        NSLog(@"file");
         image = [UIImage imageWithData:data];
+        
+        if (self.shouldDecompressImage) {
+            image = [UIImage decodeImageWithImage:image];
+        }
+        
+        if (self.shouldCacheInMemory) {
+            [self.memCache setObject:image forKey:key];
+        }
         return image;
     }
     
@@ -123,11 +135,15 @@
 }
 
 - (void)cleanCache {
-    [self.memCache removeAllObjects];
+    [self cleanMemoryCache];
     
     dispatch_async(self.ioQueue, ^{
         [_fileManager removeItemAtPath:_dirPath error:NULL];
     });
+}
+
+- (void)cleanMemoryCache {
+    [self.memCache removeAllObjects];
 }
 
 @end

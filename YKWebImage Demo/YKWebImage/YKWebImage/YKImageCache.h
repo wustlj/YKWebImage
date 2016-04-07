@@ -11,6 +11,9 @@
 
 @interface YKImageCache : NSObject
 
+/**
+ *  是否混存到内存中，默认YES
+ **/
 @property(nonatomic, assign) BOOL shouldCacheInMemory;
 
 + (YKImageCache *)shareInstance;
@@ -21,6 +24,9 @@
 
 - (UIImage *)imageFromCacheForKey:(NSString *)key;
 
+/**
+ * 清除所有缓存(内存+文件)
+ **/
 - (void)cleanCache;
 
 @end

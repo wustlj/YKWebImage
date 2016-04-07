@@ -46,10 +46,8 @@
         
         completedBlock(image, error, isFinished);
     }];
-    NSLog(@">>>%@", _downloadQueue.operations);
-    [_downloadQueue addOperation:operation];
     
-    NSLog(@"%d, %d, %d, %d", operation.isCancelled, operation.isFinished, operation.isExecuting, operation.isReady);
+    [_downloadQueue addOperation:operation];
     
     NSLog(@"add request : %@", request.URL);
     

@@ -7,6 +7,7 @@
 //
 
 #import "YKImageDownloadOperation.h"
+#import "UIImage+Decode.h"
 
 @interface YKImageDownloadOperation () <NSURLConnectionDataDelegate>
 {
@@ -14,7 +15,6 @@
 }
 @property (nonatomic, assign, getter=isExecuting) BOOL executing;
 @property (nonatomic, assign, getter=isFinished) BOOL finished;
-@property (nonatomic, assign, getter=isCancelled) BOOL cancelled;
 
 @property (nonatomic, copy) YKImageDownloadProgressBlock progressBlock;
 @property (nonatomic, copy) YKImageDownloadCompletedBlock completedBlock;
@@ -23,13 +23,14 @@
 @property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSThread *thread;
 
+@property (nonatomic, assign) BOOL shouldDecompressImage;
+
 @end
 
 @implementation YKImageDownloadOperation
 
 @synthesize finished = _finished;
 @synthesize executing = _executing;
-@synthesize cancelled = _cancelled;
 
 - (id)initWithRequest:(NSURLRequest *)request progress:(YKImageDownloadProgressBlock)progressBlock completed:(YKImageDownloadCompletedBlock)completedBlock {
     self = [super init];
@@ -38,6 +39,7 @@
         _progressBlock = [progressBlock copy];
         _completedBlock = [completedBlock copy];
         self.name = [request.URL absoluteString];
+        _shouldDecompressImage = YES;
     }
     return self;
 }
@@ -56,7 +58,6 @@
         self.executing = YES;
         self.urlConnection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
         self.thread = [NSThread currentThread];
-        NSLog(@"%@", self.thread);
     }
     
     [self.urlConnection start];
@@ -88,12 +89,6 @@
     [self didChangeValueForKey:@"isExecuting"];
 }
 
-- (void)setCancelled:(BOOL)cancelled {
-    [self willChangeValueForKey:@"isCancelled"];
-    _cancelled = cancelled;
-    [self didChangeValueForKey:@"isCancelled"];
-}
-
 - (void)cancel {
     @synchronized(self) {
         if (self.thread) {
@@ -120,22 +115,6 @@
         [self.urlConnection cancel];
         self.finished = YES;
         self.executing = NO;
-    }
-}
-
-- (void)cancelAndStop {
-    @synchronized(self) {
-        if (!self.isFinished && !self.isCancelled) {
-            NSLog(@"cancel %@", self.request.URL);
-            [super cancel];
-            
-            [self.urlConnection cancel];
-            
-            if (self.isExecuting) self.executing = NO;
-            if (!self.isFinished) self.finished = YES;
-            
-            CFRunLoopStop(CFRunLoopGetCurrent());
-        }
     }
 }
 
@@ -178,6 +157,10 @@
     if (self.completedBlock) {
         UIImage *image = [UIImage imageWithData:self.receivedData];
         
+        if (self.shouldDecompressImage) {
+            image = [UIImage decodeImageWithImage:image];
+        }
+        
 //        uint8_t c;
 //        [self.receivedData getBytes:&c length:1];
 //        NSLog(@"%hhu", c);
@@ -186,11 +169,7 @@
         self.completedBlock(image, nil, YES);
     }
     
-//    @synchronized(self) {
-//        self.finished = YES;
-//        self.executing = NO;
-//    }
-    [self finish]; 
+    [self finish];
 }
 
 - (void)finish {
@@ -210,6 +189,8 @@
 
     CFRunLoopStop(CFRunLoopGetCurrent());
 
+    [self finish];
+    
     self.receivedData = nil;
     
     if (self.completedBlock) {
